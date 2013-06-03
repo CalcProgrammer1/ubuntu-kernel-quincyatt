@@ -26,6 +26,11 @@
 #include <mach/debug-macro.S>
 #endif
 
+#define KERNEL_RAM_VADDR	(PAGE_OFFSET + TEXT_OFFSET)
+#define KERNEL_RAM_PADDR	(PHYS_OFFSET + TEXT_OFFSET)
+
+#include <asm/kexec.h>
+
 /*
  * swapper_pg_dir is the virtual address of the initial page table.
  * We place the page tables 16K below KERNEL_RAM_VADDR.  Therefore, we must

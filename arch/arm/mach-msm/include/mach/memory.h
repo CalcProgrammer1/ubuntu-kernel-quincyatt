@@ -23,13 +23,9 @@
 #define MAX_PHYSMEM_BITS 32
 #define SECTION_SIZE_BITS 28
 
-/* Maximum number of Memory Regions
-*  The largest system can have 4 memory banks, each divided into 8 regions
-*/
-#define MAX_NR_REGIONS 32
-
-/* The number of regions each memory bank is divided into */
-#define NR_REGIONS_PER_BANK 8
+#if defined(CONFIG_KEXEC_HARDBOOT) && defined(CONFIG_MACH_TENDERLOIN)
+#define KEXEC_HB_PAGE_ADDR 0x7ffff000
+#endif
 
 /* Certain configurations of MSM7x30 have multiple memory banks.
 *  One or more of these banks can contain holes in the memory map as well.
